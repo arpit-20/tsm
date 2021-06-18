@@ -14,6 +14,32 @@ const jwt=require('jsonwebtoken');
 
 jwtkey="jwt"
 
+var config = {
+    cryptkey: crypto.createHash('sha256').update('Nixnogen').digest(),
+    iv: 'a2xhcgAAAAAAAAAA'
+  }
+  
+  function encryptText (text) {
+    console.log(config.cryptkey)
+    var cipher = crypto.createCipheriv('aes-256-cbc', config.cryptkey, config.iv)
+    return Buffer.concat([
+      cipher.update(text),
+      cipher.final()
+    ]).toString('base64') // Output base64 string
+  }
+  
+  function decryptText (text) {
+    console.log(config.cryptkey)
+    if (text === null || typeof text === 'undefined' || text === '') {
+      return text
+    }
+    var decipher = crypto.createDecipheriv('aes-256-cbc', config.cryptkey, config.iv)
+    return Buffer.concat([
+      decipher.update(text, 'base64'), // Expect `text` to be a base64 string
+      decipher.final()
+    ]).toString()
+  }
+
 router.get('/', async (req, res) => {
 
     console.log("Get request for all....");
@@ -49,11 +75,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/register', async (req, res) => {
 
-
-
-        var cipher=crypto.createCipher(algo,key);
-
-        var encrypted= cipher.update(req.body.password,'utf8','hex') + cipher.final('hex');
+       var encrypted= encryptText(req.body.password);
 
         const user = new usersData({
             email: req.body.email,
@@ -90,12 +112,17 @@ router.post('/login', async (req, res) => {
 
     usersData.findOne({email:req.body.email}).then((data)=>{
         
-    var decipher=crypto.createDecipher(algo,key);
-
-    var decrypted=decipher.update(data.password,'hex','utf8')+decipher.final('utf8');
-
+    // var decipher=crypto.createDecipher(algo,key);
+        console.log('-->',req.body.password,data.password);
+        
+    var decrypted= decryptText(data.password);
+    res.status(400).json(decrypted);
     console.log("decrypted password",decrypted);
     
+    }).catch((err)=>{
+        res.status(400).json(err);
+        console.log('login error'+ ' '+err);
+        
     })
 
 
