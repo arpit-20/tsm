@@ -12,9 +12,9 @@ app.use(express.json());
 
 
 
-const userRouter=require('../backend/routes/userRoutes');
+const userRouter=require('./routes/userRoutes');
 
-const customerRouter=require('../backend/routes/customerRoutes')
+const customerRouter=require('./routes/customerRoutes');
 
 app.use('/user',userRouter);
 
