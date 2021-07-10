@@ -76,7 +76,7 @@ router.get('/:id', async (req, res) => {
 router.post('/register', async (req, res) => {
 
        var encrypted= encryptText(req.body.password);
-
+       console.log(encrypted);
         const user = new usersData({
             email: req.body.email,
             first_name: req.body.first_name,
@@ -90,16 +90,9 @@ router.post('/register', async (req, res) => {
         console.log("post user" + encrypted);
 
          await user.save().then((userData)=>{
+            res.status(201).json(userData);
 
-            jwt.sign({userData},jwtkey,(err,token)=>{
-                res.status(201).json({token});
-
-                }
-            );
-
-        // res.status(201).json(userData);
-
-         }).catch(err=>
+                }).catch(err=>
             console.log("post error" + " " + err))
 
 
@@ -108,16 +101,23 @@ router.post('/register', async (req, res) => {
 
 
 
+
 router.post('/login', async (req, res) => {
 
     usersData.findOne({email:req.body.email}).then((data)=>{
         
-    // var decipher=crypto.createDecipher(algo,key);
         console.log('-->',req.body.password,data.password);
         
+
     var decrypted= decryptText(data.password);
-    res.status(400).json(decrypted);
+    if(decrypted===req.body.password){
+        jwt.sign({data},jwtkey,(err,token)=>{
+            res.status(201).json({token});
+        });
+
+    // res.status(400).json({"token":data.password});
     console.log("decrypted password",decrypted);
+    }
     
     }).catch((err)=>{
         res.status(400).json(err);
@@ -147,31 +147,6 @@ router.delete("/:id", async (req, res) => {
 });
 
 
-/**  put route*/
-
-// router.put('/:id', async(req,res)=>{
-//     console.log('put request');
-
-//     try{
-//     let userData=await usersData.findById(req.params.id) 
-//         userData.usn=req.body.usn;
-//         userData.role=req.body.role;
-//         userData.dob=req.body.dob;
-//         userData.score=req.body.score;
-//         userData.name=req.body.name;
-//         userData.link=req.body.link;
-//         const a1=await alien.save()
-//     res.json(a1)
-//     console.log(alien);
-
-//     }catch(err){
-//         console.log("hhh");
-
-//         res.send('Error'+err)
-//     }
-//     })
-
-
 /**  patch route*/
 
 router.patch('/:id', async (req, res) => {
@@ -180,23 +155,15 @@ router.patch('/:id', async (req, res) => {
         console.log('patch request');
         if (req.body) {
 
-            let userData = await usersData.findById(req.params.id)
+            if(req.body.password){
+                 req.body.password=encryptText(req.body.password);
+            }
 
-            // for (const userKey in userData) {
-            //     for (const bodyKey in req.body) {
-
-            //         if (`${userKey}` == `${bodyKey}`) {
-
-            //             if (`${userData[userKey]}` != `${req.body[bodyKey]}`) {
-
-            //                 console.log(`${userKey}: ${req.body[userKey]}`);
-
-
-            usersData.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((data) => {
+          await  usersData.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((data) => {
 
                 console.log('patch success'  + data);
 
-                return res.status(200).send(data);
+                return res.status(200).json(data);
 
                 res.end();
             }).catch((err) => {

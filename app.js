@@ -36,6 +36,6 @@ mongoose.set('useCreateIndex', true)
 })
 
 app.listen(7200,()=>{
-    console.log('server started....');
+    console.log('server started.... @ localhost://7200');
     
 })

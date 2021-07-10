@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
 
     try {
         const consumer = await customersData.findById(req.params.id) //callback
-        res.status(200).json(consumers);
+        res.status(200).json(consumer);
 
     } catch (err) {
         console.log("get error" + err);
@@ -145,19 +145,7 @@ router.patch('/:id', async (req, res) => {
         console.log('patch request');
         if (req.body) {
 
-            let userData = await usersData.findById(req.params.id)
-
-            // for (const userKey in userData) {
-            //     for (const bodyKey in req.body) {
-
-            //         if (`${userKey}` == `${bodyKey}`) {
-
-            //             if (`${userData[userKey]}` != `${req.body[bodyKey]}`) {
-
-            //                 console.log(`${userKey}: ${req.body[userKey]}`);
-
-
-            usersData.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((data) => {
+            await customersData.findByIdAndUpdate(req.params.id, req.body, { new: true }).then((data) => {
 
                 console.log('patch success' + data);
 
@@ -169,11 +157,6 @@ router.patch('/:id', async (req, res) => {
                 console.log('patch error' + ' ' + err);
             });
 
-            // }
-            // }
-
-            //     }
-            // }
         }
     } catch (error) {
 
