@@ -103,6 +103,8 @@ router.post('/register', async (req, res) => {
 
 
 router.post('/login', async (req, res) => {
+    console.log(req.body.email,req.body.password);
+    if(req.body.email!=null && req.body.password!=null){
 
     usersData.findOne({email:req.body.email}).then((data)=>{
         
@@ -110,13 +112,17 @@ router.post('/login', async (req, res) => {
         
 
     var decrypted= decryptText(data.password);
-    if(decrypted===req.body.password){
+
+    console.log("decrypted password",decrypted);
+    if(decrypted==req.body.password){
+        console.log("password matched");
         jwt.sign({data},jwtkey,(err,token)=>{
             res.status(201).json({token});
         });
 
     // res.status(400).json({"token":data.password});
-    console.log("decrypted password",decrypted);
+    }else{
+        console.log("password not matched");
     }
     
     }).catch((err)=>{
@@ -124,6 +130,10 @@ router.post('/login', async (req, res) => {
         console.log('login error'+ ' '+err);
         
     })
+
+    }else{
+        res.status(400).json("login crednetials invalid")
+    }
 
 
 

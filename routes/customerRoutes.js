@@ -46,6 +46,8 @@ router.post('/', async (req, res) => {
 
         name: req.body.name,
         email: req.body.email,
+        purchase_form:req.body.purchase_form,
+        service_form:req.body.service_form,
         team_name: req.body.team_name,
         mobile_number: req.body.mobile_number,
         shocker_brand: req.body.shocker_brand,

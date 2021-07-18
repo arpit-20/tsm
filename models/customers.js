@@ -9,12 +9,14 @@ let customerSchema = new Schema({
     team_name:String,
     mobile_number:String,
     shocker_brand:String,
-    number_of_pairs:String,
+    purchase_form:Boolean,
+    service_form:Boolean,
+    number_of_pairs:Number,
     type_of_service:String,
     type_of_shocker:String,
     problems_facing:String,
     part_type:String,
-    number_of_peices:String,
+    number_of_peices:Number,
     other_requirement:String
   });
 
