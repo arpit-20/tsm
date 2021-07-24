@@ -181,11 +181,6 @@ router.patch('/:id', async (req, res) => {
                 console.log('patch error' + ' ' + err);
             });
 
-            // }
-            // }
-
-            //     }
-            // }
         }
     } catch (error) {
 

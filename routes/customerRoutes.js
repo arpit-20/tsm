@@ -66,6 +66,51 @@ router.post('/', async (req, res) => {
         let consumerData = await consumer.save();
         res.status(201).json(consumerData);
 
+        if(`${req.body.service_form}`==true){
+            var mailOptions = {
+                from: 'theshockmechanica@gmail.com',
+                to: ['arpitghai20@gmail.com',req.body.email],
+                subject: 'Test node mail',
+                text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
+                 + ' ' + `${req.body.name}` + ' ' + 'having gender' + ' ' + `${req.body.gender}` 
+                 + ' having' + `${req.body.email}` + 'as email id ' + 'from' + ' ' + `${req.body.team_name}` 
+                 + ' who has mobile number' + `${req.body.mobile_number}` + ' ' + 'having requested for quotaion to service' + ' ' + `${req.body.shocker_brand}` 
+                 + ' where number of paids are' + `${req.body.number_of_pairs}` + ' facing problem of '  + ' ' + `${req.body.gender}`
+                 + ' looking to buy ' + `${req.body.part_type}` + ' ' + 'having number of pieces' + ' ' + `${req.body.number_of_peices}` 
+                 + ' also there are others requirements ' + `${req.body.other_requirement}`
+    
+            }
+        }
+        else if(`${req.body.purchase_form}`==true){
+            var mailOptions = {
+                from: 'theshockmechanica@gmail.com',
+                to: ['arpitghai20@gmail.com',req.body.email],
+                subject: 'Test node mail',
+                text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
+                 + ' ' + `${req.body.name}` + ' ' + 'having gender' + ' ' + `${req.body.gender}` 
+                 + ' having' + `${req.body.email}` + 'as email id ' + 'from' + ' ' + `${req.body.team_name}` 
+                 + ' who has mobile number' + `${req.body.mobile_number}` + ' ' + 'having requested for quotaion to service' + ' ' + `${req.body.shocker_brand}` 
+                 + ' where number of paids are' + `${req.body.number_of_pairs}` + ' facing problem of '  + ' ' + `${req.body.gender}`
+                 + ' looking to buy ' + `${req.body.part_type}` + ' ' + 'having number of pieces' + ' ' + `${req.body.number_of_peices}` 
+                 + ' also there are others requirements ' + `${req.body.other_requirement}`
+    
+            }
+        }else{
+            var mailOptions = {
+                from: 'theshockmechanica@gmail.com',
+                to: ['arpitghai20@gmail.com',req.body.email],
+                subject: 'Test node mail',
+                text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
+                 + ' ' + `${req.body.name}` + ' ' + 'having gender' + ' ' + `${req.body.gender}` 
+                 + ' having' + `${req.body.email}` + 'as email id ' + 'from' + ' ' + `${req.body.team_name}` 
+                 + ' who has mobile number' + `${req.body.mobile_number}` + ' ' + 'having requested for quotaion to service' + ' ' + `${req.body.shocker_brand}` 
+                 + ' where number of paids are' + `${req.body.number_of_pairs}` + ' facing problem of '  + ' ' + `${req.body.gender}`
+                 + ' looking to buy ' + `${req.body.part_type}` + ' ' + 'having number of pieces' + ' ' + `${req.body.number_of_peices}` 
+                 + ' also there are others requirements ' + `${req.body.other_requirement}`
+    
+            }
+        }
+
         var mailOptions = {
             from: 'theshockmechanica@gmail.com',
             to: ['arpitghai20@gmail.com',req.body.email],

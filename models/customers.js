@@ -11,6 +11,7 @@ let customerSchema = new Schema({
     shocker_brand:String,
     purchase_form:Boolean,
     service_form:Boolean,
+    contact_form:Boolean,
     number_of_pairs:Number,
     type_of_service:String,
     type_of_shocker:String,
