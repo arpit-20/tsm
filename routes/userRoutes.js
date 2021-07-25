@@ -107,17 +107,19 @@ router.post('/login', async (req, res) => {
     if(req.body.email!=null && req.body.password!=null){
         console.log("inside condition");
     usersData.findOne({email:req.body.email}).then((data)=>{
-        
+        var admin=data;
+
         console.log('-->',req.body.password,data.password);
         
-
     var decrypted= decryptText(data.password);
 
     console.log("decrypted password",decrypted);
     if(decrypted==req.body.password){
         console.log("password matched");
         jwt.sign({data},jwtkey,(err,token)=>{
-            res.status(201).json({token});
+    
+        res.status(201).json({res:{token,admin}});
+    
         });
 
     // res.status(400).json({"token":data.password});
