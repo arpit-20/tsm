@@ -68,7 +68,7 @@ router.post('/', async (req, res) => {
 
         if(`${req.body.service_form}`==true){
             var mailOptions = {
-                from: 'theshockmechanica@gmail.com',
+                from: 'Mail.theshockmechanica@gmail.com',
                 to: ['arpitghai20@gmail.com',req.body.email],
                 subject: 'Test node mail',
                 text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
@@ -83,7 +83,7 @@ router.post('/', async (req, res) => {
         }
         else if(`${req.body.purchase_form}`==true){
             var mailOptions = {
-                from: 'theshockmechanica@gmail.com',
+                from: 'Mail.theshockmechanica@gmail.com',
                 to: ['arpitghai20@gmail.com',req.body.email],
                 subject: 'Test node mail',
                 text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
@@ -97,8 +97,9 @@ router.post('/', async (req, res) => {
             }
         }else{
             var mailOptions = {
-                from: 'theshockmechanica@gmail.com',
-                to: ['arpitghai20@gmail.com',req.body.email],
+                from: 'Mail.theshockmechanica@gmail.com',
+                to: ['arpitghai20@gmail.com','theshockmechanica@gmail.com'],
+                cc:req.body.email,
                 subject: 'Test node mail',
                 text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
                  + ' ' + `${req.body.name}` + ' ' + 'having gender' + ' ' + `${req.body.gender}` 

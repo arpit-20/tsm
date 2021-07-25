@@ -105,7 +105,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     console.log(req.body.email,req.body.password);
     if(req.body.email!=null && req.body.password!=null){
-
+        console.log("inside condition");
     usersData.findOne({email:req.body.email}).then((data)=>{
         
         console.log('-->',req.body.password,data.password);

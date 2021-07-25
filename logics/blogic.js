@@ -9,7 +9,7 @@ port:587,
 secure:false,
 requireTLS:true,
 auth:{
-    user:'theshockmechanica@gmail.com',
+    user:'Mail.theshockmechanica@gmail.com',
     pass:'tsmjatayu'
 }
 })
