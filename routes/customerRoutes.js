@@ -9,6 +9,8 @@ const customersData = require('../models/customers');
 
 var nodeMail = require('../logics/blogic');
 
+this.mailOptions={}
+
 router.get('/', async (req, res) => {
 
     try {
@@ -61,85 +63,90 @@ router.post('/', async (req, res) => {
         other_requirement: req.body.other_requirement
     })
 
-    try {
+    
         console.log("post consumer" + consumer);
 
-        let consumerData = await consumer.save();
+    await consumer.save().then((consumerData)=>{
+            if(req.body.service_form==true){
+
+                console.log("service, form");
+                this.mailOptions = {
+                    from: 'Mail.theshockmechanica@gmail.com',
+                    to: ['arpitghai20@gmail.com','theshockmechanica@gmail.com'],
+                    cc:req.body.email,
+                    subject: 'Test node mail',
+                    text: `Hi` + ' ' + `${req.body.name}` + 
+                    `This is an automated mail confirming your service request for` + ' ' + `${req.body.number_of_pairs}`  +` ` + `pairs of` + ` ` + `${req.body.shocker_brand}.` + ` ` + `The service requested is` +`type of service` +
+                    'Hence,quotation for team' + ` ` + `${req.body.team_name}` + ` ` + `will be mailed to you by EOD.` +
+                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).`+
+                    `Sincerely,`+
+                    `Harsh Jha`+
+                    `The Shock Mechanica`
+                    
+                }
+                console.log('==>>',this.mailOptions);
+            }
+            else if(req.body.purchase_form==true){
+                this.mailOptions = {
+                    from: 'Mail.theshockmechanica@gmail.com',
+                    to: ['arpitghai20@gmail.com','theshockmechanica@gmail.com'],
+                    cc:req.body.email,
+                    subject: 'Test node mail',
+                    text:`Hi` + ' ' + `${req.body.name}` + 
+                    `This is an automated mail confirming your interest in buying` + ' ' + `${req.body.number_of_pieces}` + ` ` + `pieces of` + ` ` + `${req.body.shocker_brand}` + 
+                    `Hence, quotation for team` + ` ` + `${req.body.team_name}` + ` ` + `will be mailed to you by EOD.` +
+                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).`+
+                    `Sincerely,`+
+                    `Harsh Jha`+
+                    `The Shock Mechanica`
+                    
+                }
+            }else if(req.body.contact_form==true){
+                this.mailOptions = {
+                    from: 'Mail.theshockmechanica@gmail.com',
+                    to: ['arpitghai20@gmail.com','theshockmechanica@gmail.com'],
+                    cc:req.body.email,
+                    subject: 'Test node mail',
+                    text:`Hi` + ' ' + `${req.body.name}` +
+                    `This is an automated mail considering your requirement of` + ' ' + `${req.body.any_other_requirement}`  + 
+                    `We are looking in to your requirement and will respond you in time.` +
+                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).`+
+                    `Sincerely,`+
+                    `Harsh Jha`+
+                    `The Shock Mechanica`
+                    
+                }
+            }
+
+
+            nodeMail.sendMail(this.mailOptions, function (error, Info) {
+                if (error) {
+                    res.status(400).json(error)
+                    console.log(error);
+    
+                } else {
+                    if(Info.response){
+                        
         res.status(201).json(consumerData);
+                    console.log('email has been sent', Info.response);
+                    }else{
 
-        if(`${req.body.service_form}`==true){
-            var mailOptions = {
-                from: 'Mail.theshockmechanica@gmail.com',
-                to: ['arpitghai20@gmail.com',req.body.email],
-                subject: 'Test node mail',
-                text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
-                 + ' ' + `${req.body.name}` + ' ' + 'having gender' + ' ' + `${req.body.gender}` 
-                 + ' having' + `${req.body.email}` + 'as email id ' + 'from' + ' ' + `${req.body.team_name}` 
-                 + ' who has mobile number' + `${req.body.mobile_number}` + ' ' + 'having requested for quotaion to service' + ' ' + `${req.body.shocker_brand}` 
-                 + ' where number of paids are' + `${req.body.number_of_pairs}` + ' facing problem of '  + ' ' + `${req.body.gender}`
-                 + ' looking to buy ' + `${req.body.part_type}` + ' ' + 'having number of pieces' + ' ' + `${req.body.number_of_peices}` 
-                 + ' also there are others requirements ' + `${req.body.other_requirement}`
+                    console.log('email has been sent', Info.rejected);
+                    }
     
-            }
-        }
-        else if(`${req.body.purchase_form}`==true){
-            var mailOptions = {
-                from: 'Mail.theshockmechanica@gmail.com',
-                to: ['arpitghai20@gmail.com',req.body.email],
-                subject: 'Test node mail',
-                text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
-                 + ' ' + `${req.body.name}` + ' ' + 'having gender' + ' ' + `${req.body.gender}` 
-                 + ' having' + `${req.body.email}` + 'as email id ' + 'from' + ' ' + `${req.body.team_name}` 
-                 + ' who has mobile number' + `${req.body.mobile_number}` + ' ' + 'having requested for quotaion to service' + ' ' + `${req.body.shocker_brand}` 
-                 + ' where number of paids are' + `${req.body.number_of_pairs}` + ' facing problem of '  + ' ' + `${req.body.gender}`
-                 + ' looking to buy ' + `${req.body.part_type}` + ' ' + 'having number of pieces' + ' ' + `${req.body.number_of_peices}` 
-                 + ' also there are others requirements ' + `${req.body.other_requirement}`
-    
-            }
-        }else{
-            var mailOptions = {
-                from: 'Mail.theshockmechanica@gmail.com',
-                to: ['arpitghai20@gmail.com','theshockmechanica@gmail.com'],
-                cc:req.body.email,
-                subject: 'Test node mail',
-                text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
-                 + ' ' + `${req.body.name}` + ' ' + 'having gender' + ' ' + `${req.body.gender}` 
-                 + ' having' + `${req.body.email}` + 'as email id ' + 'from' + ' ' + `${req.body.team_name}` 
-                 + ' who has mobile number' + `${req.body.mobile_number}` + ' ' + 'having requested for quotaion to service' + ' ' + `${req.body.shocker_brand}` 
-                 + ' where number of paids are' + `${req.body.number_of_pairs}` + ' facing problem of '  + ' ' + `${req.body.gender}`
-                 + ' looking to buy ' + `${req.body.part_type}` + ' ' + 'having number of pieces' + ' ' + `${req.body.number_of_peices}` 
-                 + ' also there are others requirements ' + `${req.body.other_requirement}`
-    
-            }
-        }
+                }
+            })
+        }).catch(err=>{
 
-        var mailOptions = {
-            from: 'theshockmechanica@gmail.com',
-            to: ['arpitghai20@gmail.com',req.body.email],
-            subject: 'Test node mail',
-            text:  `following is the Quotation has been sent by you by The Shock Mechanica having your name`
-             + ' ' + `${req.body.name}` + ' ' + 'having gender' + ' ' + `${req.body.gender}` 
-             + ' having' + `${req.body.email}` + 'as email id ' + 'from' + ' ' + `${req.body.team_name}` 
-             + ' who has mobile number' + `${req.body.mobile_number}` + ' ' + 'having requested for quotaion to service' + ' ' + `${req.body.shocker_brand}` 
-             + ' where number of paids are' + `${req.body.number_of_pairs}` + ' facing problem of '  + ' ' + `${req.body.gender}`
-             + ' looking to buy ' + `${req.body.part_type}` + ' ' + 'having number of pieces' + ' ' + `${req.body.number_of_peices}` 
-             + ' also there are others requirements ' + `${req.body.other_requirement}`
-
-        }
-            nodeMail.sendMail(mailOptions, function (error, Info) {
-            if (error) {
-                console.log(error);
-
-            } else {
-                console.log('email has been sent', Info);
-
-            }
+        res.status(400).send("Error" + err)
         })
 
-    } catch (err) {
+        
 
-        res.send("Error" + err)
-    }
+
+   
+
+  
 });
 
 
