@@ -75,16 +75,17 @@ router.post('/', async (req, res) => {
                     to: ['arpitghai20@gmail.com','theshockmechanica@gmail.com'],
                     cc:req.body.email,
                     subject: 'Test node mail',
-                    text: `Hi` + ' ' + `${req.body.name}` + 
-                    `This is an automated mail confirming your service request for` + ' ' + `${req.body.number_of_pairs}`  +` ` + `pairs of` + ` ` + `${req.body.shocker_brand}.` + ` ` + `The service requested is` +`type of service` +
-                    'Hence,quotation for team' + ` ` + `${req.body.team_name}` + ` ` + `will be mailed to you by EOD.` +
-                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).`+
-                    `Sincerely,`+
-                    `Harsh Jha`+
+                    text: `Hi` + ' ' + `${req.body.name}`  +"\n"+
+                    `This is an automated mail confirming your service request for` + ' ' + 
+                    `${req.body.number_of_pairs}`  +` ` + `pairs of` + ` ` + `${req.body.shocker_brand}.`
+                     + ` ` + `The service requested is`  + ' ' +`${req.body.type_of_service}.` +"\n"+
+                    'Hence,quotation for team' + ` ` + `${req.body.team_name}` + ` ` + `will be mailed to you by EOD.` +"\n"+
+                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).` +"\n"+
+                    `Sincerely,` +"\n"+
+                    `Harsh Jha` +"\n"+
                     `The Shock Mechanica`
                     
                 }
-                console.log('==>>',this.mailOptions);
             }
             else if(req.body.purchase_form==true){
                 this.mailOptions = {
@@ -92,12 +93,13 @@ router.post('/', async (req, res) => {
                     to: ['arpitghai20@gmail.com','theshockmechanica@gmail.com'],
                     cc:req.body.email,
                     subject: 'Test node mail',
-                    text:`Hi` + ' ' + `${req.body.name}` + 
-                    `This is an automated mail confirming your interest in buying` + ' ' + `${req.body.number_of_pieces}` + ` ` + `pieces of` + ` ` + `${req.body.shocker_brand}` + 
-                    `Hence, quotation for team` + ` ` + `${req.body.team_name}` + ` ` + `will be mailed to you by EOD.` +
-                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).`+
-                    `Sincerely,`+
-                    `Harsh Jha`+
+                    text:`Hi` + ' ' + `${req.body.name},`  +"\n"+
+                    `This is an automated mail confirming your interest in buying` + ' ' + 
+                    `${req.body.number_of_peices}` + ` ` + `peices of` + ` ` + `${req.body.part_type}`+"."+"\n"+
+                      + ' ' +`Hence, quotation for team` + ` ` + `${req.body.team_name}` + ` ` + `will be mailed to you by EOD.` + ' ' +
+                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).` + "\n" +
+                    `Sincerely,` + "\n" +
+                    `Harsh Jha`+ "\n"+
                     `The Shock Mechanica`
                     
                 }
@@ -107,12 +109,12 @@ router.post('/', async (req, res) => {
                     to: ['arpitghai20@gmail.com','theshockmechanica@gmail.com'],
                     cc:req.body.email,
                     subject: 'Test node mail',
-                    text:`Hi` + ' ' + `${req.body.name}` +
-                    `This is an automated mail considering your requirement of` + ' ' + `${req.body.any_other_requirement}`  + 
-                    `We are looking in to your requirement and will respond you in time.` +
-                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).`+
-                    `Sincerely,`+
-                    `Harsh Jha`+
+                    text:`Hi` + ' ' + `${req.body.name}`  + "\n" +
+                    `This is an automated mail considering your requirement of` + ' ' + `${req.body.other_requirement}`   +  "\n" +
+                    `We are looking in to your requirement and will respond you in time. ` + "\n"+
+                    `For any further queries, please don't hesitate to get in touch with us at (theshockmechanica@gmail.com or 9068056922).` +  "\n" +
+                    `Sincerely,` +  "\n" +
+                    `Harsh Jha` +  "\n" +
                     `The Shock Mechanica`
                     
                 }
