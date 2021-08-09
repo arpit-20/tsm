@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.json());
 
-
+const Port=process.env.PORT || 7200
 
 const userRouter=require('./routes/userRoutes');
 
@@ -35,7 +35,7 @@ mongoose.set('useCreateIndex', true)
     
 })
 
-app.listen(7200,()=>{
+app.listen(Port,()=>{
     console.log('server started.... @ localhost://7200');
     
 })
