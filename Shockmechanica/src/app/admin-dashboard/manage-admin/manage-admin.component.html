@@ -1,0 +1,39 @@
+<div class="col-sm" style="background-color: aliceblue">
+
+    <div class="row-sm-2 login_header">
+        <i class="fa fa-cogs fa-1x" aria-hidden="true"> </i> Manage Admins
+        <i class="fa fa-user fa-1x" aria-hidden="true"> </i>
+    </div>
+    <div class="row-sm-10">
+        <div class="table-responsive" style="zoom:73%">
+            <table class="table table-striped table-bordered table-md table-light table-responsive">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Date of birth</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of adminList">
+                        <td>{{data.first_name}}</td>
+                        <td>{{data.last_name}}</td>
+                        <td>{{data.email}}</td>
+                        <td>{{data.gender}}</td>
+                        <td>{{data.dob}}</td>
+                        <td>
+                            <i class="fa fa-edit fa-2x" aria-hidden="true" (click)="updateAdmin(data)"  > </i> &nbsp;&nbsp;
+
+                            <i class="fa fa-trash fa-2x" aria-hidden="true" (click)="deleteAdmin(data)" > </i>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

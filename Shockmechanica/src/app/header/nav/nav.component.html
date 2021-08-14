@@ -1,0 +1,38 @@
+<nav class="navbar navbar-light sticky-top bg-white navbar-expand-lg">
+    <a class="navbar-brand">
+        <img src="../../assets/logo.jpg" width="140px" height="150px" alt="logo">
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#mynavbar">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-items"><a class="nav-link" routerLink="">Home</a></li>
+            <li class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="product-list">Products</a></li>
+            <li class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="services/place">Services</a></li>
+            <li class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="blog">Blogs</a></li>
+            <li class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="about-us">About us</a></li>
+            <li *ngIf="isLoggedIn()" class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="admin-dashboard/orders"><i class="fa fa-user-circle" aria-hidden="true"></i>My Account</a></li>
+            <li class="nav-items">
+                <div class="btnStyle" *ngIf="!isLoggedIn()">
+                    <button class="btn btn-center" (click)="redirectToLogin()">Login</button>
+                </div>
+                <div class="btnStyle" *ngIf="isLoggedIn()">
+                    <button class="btn btn-center" (click)="logout()">Logout</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- <li class="nav-items dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        Login
+                    </a>
+                        <div class="dropdown-menu">
+                            <a href="" class="dropdown-item">Link1</a>
+                            <a href="" class="dropdown-item">Link2</a>
+                            <a href="" class="dropdown-item">Link3</a>
+                        </div>
+                    </li> -->

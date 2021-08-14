@@ -1,0 +1,37 @@
+
+
+.nav-link {
+    display: block;
+    padding: 1rem 1rem;  
+    margin-left: 2rem;
+    text-align: center;
+    max-width: 300px;
+    background-color: rgba(15, 129, 236, 0.2);
+    border-radius: 4px;
+    width: 10rem;
+    margin-bottom: 0.3rem;
+    color: #0D264C;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+}
+.admin-basic{
+    text-align: center;
+    text-transform:lowercase;
+  
+   
+ }
+ .admin-basic .name{
+     font-weight: bold;
+     margin: 0px;
+     text-transform:uppercase;
+ }  
+ .active{
+     background-color: white;
+ }
+ @media only screen and (max-width: 600px) {
+
+    .nav-link{
+        margin-left: 6.2rem;
+    }
+}
+

@@ -1,0 +1,155 @@
+
+<div class="container-fluid" style="background-color: aliceblue">
+<div class="row">
+    <div class="col-4 mt-3 login_header">
+       Service requests
+      </div>
+      <div class="col-3 offset-5 mt-3">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search here..." [(ngModel)]="searchText">
+      </div>
+      
+</div>
+
+ <div class="row">
+         <div class="col">
+            <div class="table-responsive" style="zoom:81%">
+                <table class="table table-striped table-bordered table-md table-light table-responsive">
+                    <thead>
+                        <tr>
+        
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Team Name</th>
+                            <th>Pairs</th>
+                            <th>Problem</th>
+                            <th>Shocker Brand</th>
+                            <th>Type Of Service</th>
+                            <th>Actions</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let customer of serviceData | filter:searchText">
+        
+                            <td>{{customer.name}}</td>
+                            <td>{{customer.email}}</td>
+                            <td>{{customer.mobile_number}}</td>
+                            <td>{{customer.team_name}}</td>
+                            <td>{{customer.number_of_pairs}}</td>
+                            <td>{{customer.problems_facing}}</td>
+                            <td>{{customer.shocker_brand}}</td>
+                            <td>{{customer.type_of_service}}</td>
+                            <td><i class="fa fa-trash fa-2x" aria-hidden="true" (click)="deleteCustomer(customer)"> </i></td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+         </div>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-4 mt-3 login_header">
+        Purchasing requests
+      </div>
+      <div class="col-3 offset-5 mt-3">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search here..." [(ngModel)]="searchBuy">
+      </div>
+      
+</div>
+
+ <div class="row">
+         <div class="col">
+            <div class="table-responsive" style="zoom:90%">
+                <table class="table table-striped table-bordered table-md table-light table-responsive">
+                    <thead>
+                        <tr>
+        
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Team Name</th>
+                            <th>pieces</th>
+                            <th>Part type</th>
+        
+        
+                            <th>Other requirements</th>
+                            <th>Actions</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let customer of purchaseData | filter:searchBuy">
+        
+                            <td>{{customer.name}}</td>
+                            <td>{{customer.email}}</td>
+                            <td>{{customer.mobile_number}}</td>
+                            <td>{{customer.team_name}}</td>
+                            <td>{{customer.number_of_peices}}</td>
+                            <td>{{customer.part_type}}</td>
+                            <td>{{customer.other_requirement}}</td>
+                            <td><i class="fa fa-trash fa-2x" aria-hidden="true" (click)="deleteCustomer(customer)"> </i></td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+         </div>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-4 mt-3 login_header">
+        Other requests
+      </div>
+      <div class="col-3 offset-5 mt-3">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search here..." [(ngModel)]="searchBuy">
+      </div>
+      
+</div>
+
+ <div class="row">
+         <div class="col">
+            <div class="table-responsive" style="zoom:90%">
+                <table class="table table-striped table-bordered table-md table-light table-responsive">
+                    <thead>
+                        <tr>
+        
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Other requirements</th>
+                            <th>Actions</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of otherData | filter:searchBuy">
+        
+                            <td>{{data.name}}</td>
+                            <td>{{data.email}}</td>
+                            <td>{{data.mobile_number}}</td>
+                            <td>{{data.other_requirement}}</td>
+                            <td><i class="fa fa-trash fa-2x" aria-hidden="true" (click)="deleteCustomer(data)"> </i></td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+         </div>
+
+</div>
+
+</div>
+
+
+
+
+     
+

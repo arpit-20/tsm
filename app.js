@@ -35,6 +35,15 @@ mongoose.set('useCreateIndex', true)
     
 })
 
+
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static("Shockmechanica/dist"));
+    const path=require("path");
+        app.get("*",(req,res)=>{
+            res.sendFile(path.resolve("server","Shockmechanica","dist","index.html"));
+        })
+}
+
 app.listen(Port,()=>{
     console.log('server started.... @ localhost://7200');
     

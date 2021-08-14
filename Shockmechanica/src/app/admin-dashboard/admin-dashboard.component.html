@@ -1,0 +1,21 @@
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-md-2" style="background-color:aliceblue;">
+            <ul class="navbar-nav ml-auto">
+                <div class="admin-basic" style="margin-top: 0.5rem;">
+                    <p class="name">{{adminData.first_name}}</p>
+                    <p class="email">{{adminData.email}}</p>
+                </div>
+                <li><a class="nav-link">Admin actions</a></li>
+                <li><a class="nav-link" routerLinkActive="active" routerLink="orders">Orders-list <i class="fa fa-list"></i></a> </li>
+                <li *ngIf="isSuperAdminLoggedIn"><a class="nav-link" routerLinkActive="active" routerLink="manage-admin">Admin List <i class="fa fa-users"></i> </a></li>
+                <li *ngIf="isSuperAdminLoggedIn"><a class="nav-link" routerLinkActive="active" routerLink="create">New admin <i class="fa fa-user-plus"></i></a></li>
+
+            </ul>
+        </div>
+       
+
+        <router-outlet></router-outlet>
+    </div>

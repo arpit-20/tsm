@@ -1,0 +1,51 @@
+
+.header-text-tag {
+    font-size: 6.7vw;
+    font-weight: 490;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: rgba(15, 129, 236, 0.2);
+    position: relative;
+    margin-top: 10rem;
+   text-shadow:3px 3px rgb(109, 107, 107);
+   
+}
+
+.header-description {
+    font-size: 1.4rem;
+    line-height: 2;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+    color: rgba(13, 38, 76, .7);
+    font-family: sans-serif;
+}
+.row{
+   
+    text-align: center;
+}
+.col{
+    margin-left: 0px;
+}
+.main-heading{
+ margin-left: 100px;
+ margin-top: 8rem;
+}
+@media only screen and (max-width: 600px) {
+ 
+    .header-description {
+        margin-left: 3rem;
+       
+    }
+    .main-heading{
+       
+        margin-top: 0px;
+       }
+    .header-text-tag {
+        margin-top: 7rem;
+       
+    }
+    div.col-4{
+        width: 0px;
+    }
+}

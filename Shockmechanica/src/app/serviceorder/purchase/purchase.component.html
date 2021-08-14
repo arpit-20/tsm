@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="col-sm">
+        <div class="row-sm-2 login_header">
+            <i class="fa fa-shopping-bag"> &nbsp; </i>Buy Shockers
+        </div>
+        <div class="row-sm-1 login_sub_heading">
+            Grow with TSM!
+        </div>
+        <div class="row-sm-9">
+            <form [formGroup]="purchaseForm" (ngSubmit)="onSubmit(purchaseForm)">
+                <div class="form-group mt-4">
+                    <input id="name" formControlName="name" class="form-control form-field" type="text" [ngClass]="{ 'is-invalid': submitted && f.name?.errors }" placeholder="Name">
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <input id="email" formControlName="email" class="form-control form-field" type="text" [ngClass]="{ 'is-invalid': submitted && f.email?.errors }" placeholder="Email">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                </div>
+                <div class="form-group mt-4">
+                    <input id="mobile_number" formControlName="mobile_number" class="form-control form-field" type="text" [ngClass]="{ 'is-invalid': submitted && f.mobile_number?.errors }" placeholder="Mobile number">
+                    <div *ngIf="submitted && f.mobile_number.errors" class="invalid-feedback">
+                        <div *ngIf="f.mobile_number.errors.required">Mobile number is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <input id="team_name" formControlName="team_name" class="form-control form-field" type="text" [ngClass]="{ 'is-invalid': submitted && f.team_name?.errors }" placeholder="Team name">
+                    <div *ngIf="submitted && f.team_name.errors" class="invalid-feedback">
+                        <div *ngIf="submitted && f.team_name.errors.required">Team name is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <input id="part_type" formControlName="part_type" class="form-control form-field" type="text" [ngClass]="{ 'is-invalid': submitted && f.part_type?.errors }" placeholder="Part type ">
+                    <div *ngIf="submitted && f.part_type.errors" class="invalid-feedback">
+                        <div *ngIf="f.part_type.errors.required">Part Type is required</div>
+                    </div>
+                </div>
+                <div class="form-group mt-4">
+                    <input type="number" id="number_of_peices" formControlName="number_of_peices" class="form-control form-field" [ngClass]="{ 'is-invalid': submitted && f.number_of_peices?.errors }" placeholder="Number of pieces" />
+                    <div *ngIf="submitted && f.number_of_peices.errors" class="invalid-feedback">
+                        <div *ngIf="f.number_of_peices.errors.required">Number of pieces is required</div>
+                        <div *ngIf="f.number_of_peices.errors.min || f.number_of_peices.errors.max">Number of pieces must be in between 1 and 15</div>
+                    </div>
+                </div>
+                <div class="form-group mt-4">
+                    <textarea type="text" id="other_requirement" formControlName="other_requirement" class="form-control form-field" maxlength="100" [ngClass]="{ 'is-invalid': submitted && f.other_requirement?.errors }" placeholder="Other Requirements"></textarea>
+                </div>
+
+                <div class="form-group mt-4">
+                    <input id="purchase_form" hidden value=true formControlName="purchase_form" class="form-control form-field" type="text" [ngClass]="{ 'is-invalid': submitted && f.purchase_form?.errors }" placeholder="purchase_form">
+                    <div *ngIf="submitted && f.purchase_form.errors" class="invalid-feedback">
+                        <div *ngIf="f.purchase_form.errors.required">hidden-purchase form</div>
+                    </div>
+                </div>
+
+                <button class="btn from__button--floating" type="submit">Buy</button>
+            </form>
+        </div>
+    </div>
+</div>

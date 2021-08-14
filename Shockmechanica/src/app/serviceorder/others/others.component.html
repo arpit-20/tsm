@@ -1,0 +1,88 @@
+
+<div class="container">
+  <div class="col-sm">
+    <div class="row-sm-2 login_header">
+      Any Other Requirement?
+    </div>
+    <div class="row-sm-1 login_sub_heading">Grow with TSM!</div>
+    <div class="row-sm-9">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)">
+
+        <div class="form-group mt-4">
+            <input id="contact_form" hidden formControlName="contact_form" value=true class="form-control form-field" type="text" [ngClass]="{ 'is-invalid': submitted && f.contact_form?.errors }" placeholder="contact_form">
+            <div *ngIf="submitted && f.contact_form.errors" class="invalid-feedback">
+                <div *ngIf="f.contact_form.errors.required">hidden-purchase form</div>
+            </div>
+        </div>
+        
+        <div class="form-group mt-4">
+          <input
+            id="name"
+            formControlName="name"
+            class="form-control form-field"
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && f.name?.errors }"
+            required
+            placeholder="Name"
+          />
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+          </div>
+        </div>
+        <div class="form-group mt-4">
+          <input
+            id="email"
+            formControlName="email"
+            class="form-control form-field"
+            type="email"
+            [ngClass]="{ 'is-invalid': submitted && f.email?.errors }"
+            required
+            placeholder="Email"
+          />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+          </div>
+        </div>
+
+        <div class="form-group mt-4">
+          <input
+            id="mobile_number"
+            formControlName="mobile_number"
+            class="form-control form-field"
+            type="number"
+            [ngClass]="{ 'is-invalid': submitted && f.mobile_number?.errors }"
+            required
+            placeholder="Mobile Number"
+          />
+          <div
+            *ngIf="submitted && f.mobile_number.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.mobile_number.errors.required">
+              Mobile number is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-4">
+          <textarea
+            type="textarea"
+            id="other_requirement"
+            formControlName="other_requirement"
+            class="form-control form-field"
+            placeholder="Any Other Requiremnt"
+          ></textarea>
+          <div
+          *ngIf="submitted && f.other_requirement.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f.other_requirement.errors.required">
+            Other Requirement is required
+          </div>
+        </div>
+        </div>
+        <button class="btn from__button--floating" type="submit">Submit</button>
+       
+      </form>
+    </div>
+  </div>
+</div>

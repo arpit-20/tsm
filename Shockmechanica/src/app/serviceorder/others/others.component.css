@@ -1,0 +1,78 @@
+.container {
+    width: 60%;
+    align-items: center;
+    margin-left: 13rem;
+    margin-top: 1.5rem;
+    -webkit-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    padding: 24px 32px 32px;
+    border-radius: 3px;
+    margin-top: 3.5rem;
+    background: rgba(95, 175, 250, 0.2);
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.form-group .form-field {
+    font-size: 1.2rem;
+    line-height: 1.33333;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 1;
+    height: 10px;
+    padding: 20px 9px;
+    border-radius: 4px !important;
+}
+.login_header {
+    font-size: 2rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    padding: 0 0 4px 0;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+
+button.from__button--floating,
+.from__button--floating {
+    height: 48px;
+    line-height: 50px;
+}
+
+.btn {
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #0D264C !important;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 1rem;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    line-height: 40px;
+    padding: 0 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background: rgba(15, 129, 236, 0.2) !important;
+    border-radius: 6px !important;
+}
+
+.login_sub_heading {
+    font-size: 1.3rem;
+    line-height: 1.42857;
+    font-weight: 400;
+    color: #2d94f3!important;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 100%;
+        margin-left: 0rem;
+    }
+ }

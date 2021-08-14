@@ -1,0 +1,39 @@
+
+.flickity-button {
+    position: absolute;
+    background: rgba(218, 17, 17, 0.75);
+    border: none;
+    color: #333;
+display: none;
+}
+.flickity-page-dots .dot:nth-child(odd){
+    animation-delay: .3s;
+}
+.flickity-page-dots .dot{
+    background-color: #007bff!important;
+    opacity: .15;
+    animation: bounce .3s infinite alternate;
+    -webkit-animation: bounce .3s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(3px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(3px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+  .active{
+    background-color: rgba(15, 129, 236, 0.2);
+    border-radius: 5px;
+    border-width: 2px;
+  }

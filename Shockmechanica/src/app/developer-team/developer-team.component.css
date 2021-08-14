@@ -1,0 +1,50 @@
+.btn {
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #0D264C !important;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 2rem;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    line-height: 40px;
+    padding: 0 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background: rgba(15, 129, 236, 0.2) !important;
+    border-radius: 6px !important;
+}
+.card-text{
+    min-height: 100px;
+    max-height: 90px;
+}
+.blog_header {
+    font-size: 2rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    padding: 0 0 4px 0;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+.card-header {
+    background-color: rgba(15, 129, 236, 0.2);
+}
+.card-title{
+    margin-left: 13px;
+}
+.developer_contact{
+    font-size: 1.5rem;
+    margin-left: 5rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    padding: 0 0 4px 0;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+.contact_heading{
+    color: #2d94f3!important;
+}

@@ -1,0 +1,16 @@
+.client {
+    background-color: rgba(15, 129, 236, 0.2);
+    clip-path: polygon(100% 1%, 100% 91%, 0 99%, 0 10%);
+    height: auto;
+    padding: 4.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .client {
+        clip-path: polygon(100% 0, 100% 95%, 0 100%, 0 6%);
+        padding: 4.5rem;
+    }
+}
+.contact{
+    margin-top: 10rem;
+}

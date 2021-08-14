@@ -1,0 +1,99 @@
+.login_main {
+    width: 33.5rem;
+    -webkit-box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    box-shadow: 0px 15px 30px rgba(15, 129, 236, 0.2);
+    padding: 24px 32px 32px;
+    border-radius: 3px;
+    margin-top: 2rem;
+    text-align: center;
+   margin-left: 18rem;
+    background: rgba(95, 175, 250, 0.2);
+}
+
+.login_header {
+    font-size: 2.5rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    padding: 0 0 4px 0;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+
+.login_sub_heading {
+    font-size: 1.3rem;
+    line-height: 1.42857;
+    font-weight: 400;
+    color: #2d94f3!important;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+
+button.from__button--floating,
+.from__button--floating {
+    height: 48px;
+    line-height: 50px;
+}
+
+.btn {
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #0D264C !important;
+    width: 100%;
+    font-weight: 600;
+      font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    line-height: 40px;
+    padding: 0 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background: rgba(15, 129, 236, 0.2) !important;
+    border-radius: 6px !important;
+}
+
+.form-group #email,
+#password {
+    font-size: 1.2rem;
+    line-height: 1.33333;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 1;
+    height: 10px;
+    padding: 20px 9px;
+    border-radius: 4px !important;
+}
+
+
+.form-group .btn {
+    padding: 0px;
+    width: 4rem;
+    font-size: 1rem;
+    background-color: rgba(15, 129, 236, 0.2);
+    color: black;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: rgba(15, 129, 236, 0.2);
+    padding: 0.3rem 0.2rem;
+    margin-left: 2rem;
+    -webkit-transition: all .3s cubic-bezier(.165, .84, .44, 1);
+    -o-transition: all .3s cubic-bezier(.165, .84, .44, 1);
+    transition: all .3s cubic-bezier(.165, .84, .44, 1);
+}
+.forget_pass_heading{
+text-align: end;
+cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .login_main{
+        width: 20rem;
+        margin-left: 0px;
+    }
+    .alert {
+        margin-left: -6rem;
+        width: 300px;
+    }
+}

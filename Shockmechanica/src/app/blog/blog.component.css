@@ -1,0 +1,56 @@
+.blog_header {
+    font-size: 2rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    padding: 0 0 4px 0;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+
+.btnStyle .btn {
+    padding: 0px;
+    border: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #0D264C !important;
+    width: 17rem;
+    height: 3.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    line-height: 40px;
+    padding: 0 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    background: rgba(15, 129, 236, 0.2) !important;
+    border-radius: 6px !important;
+}
+
+.btnStyle .btn:hover {
+    background-color: rgba(15, 129, 236, 0.2);
+    color: black;
+}
+
+.card {
+    width: 100%;
+}
+
+.card-header {
+    background-color: rgba(15, 129, 236, 0.2);
+}
+
+.card-title {
+    color: #0D264C !important;
+}
+
+.back_to_home {
+    font-size: 1.3rem;
+    line-height: 1.42857;
+    font-weight: 400;
+    cursor: pointer;
+    color: #2d94f3!important;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}

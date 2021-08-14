@@ -1,0 +1,43 @@
+th {
+    color: #0D264C;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+td .fa-trash {
+    color: rgb(247, 64, 64);
+}
+
+td .fa:hover {
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+}
+
+td,
+th {
+    min-width: 247px;
+}
+
+.login_header {
+    font-size: 2rem;
+    line-height: 1.25;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #0D264C;
+    text-align: center;
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+@media only screen and (max-width: 600px) {
+    td,
+th {
+    min-width: 10px;
+}
+}

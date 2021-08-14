@@ -1,0 +1,65 @@
+<div class="container">
+    <div class = "login_main">
+
+  
+    <div class="col-sm">
+        <div class="row-sm-2 login_header">
+            Sign in
+        </div>
+        <div class="row-sm-1 login_sub_heading">
+            The Shock Mechanica - Shocker's solution
+        </div>
+        <div class="row-sm-9">
+            <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+                <div class="form-group mt-4">
+                    <input id="email" formControlName="email" class="form-control" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required placeholder="Email">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">email is required</div>
+                        <!-- <div error-for="email" id="error-for-email" role="alert" aria-live="assertive">Couldn’t find TSM account associated with this email. Please try again.</div> -->
+                    </div>
+
+                </div>
+                <div class="form-group mt-4">
+                    <input type="password" id="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required placeholder="Password" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <p class = "forget_pass_heading"> <a data-toggle="modal" data-target="#exampleModal">Forget Password?</a> </p>
+                <button class="btn from__button--floating" type="submit">Sign in</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div style="margin-top: 10px;">
+
+
+    <div class="row">
+        <div class="col-4 offset-4">
+            <div class="alert alert-warning" role="alert" style="text-align: center;">
+                <i class="fa fa-exclamation-triangle"></i>Only admins are allowed to login
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Forget Password?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        Relax and try to remember your password.
+        <br>Dont worry! we are working on this,will notify you soon.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Thanks!</button>
+        </div>
+      </div>
+    </div>
+  </div>

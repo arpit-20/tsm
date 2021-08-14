@@ -1,0 +1,57 @@
+th {
+    color: #0D264C;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+td,
+th {
+    min-width: 142px;
+}
+.login_header {
+    font-size: 1.3rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: #0D264C;
+   
+    font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+}
+
+.form-control {
+    width: 75%;
+    margin-bottom: 10px;
+}
+
+.form-inline .btn:hover {
+    background-color: rgba(15, 129, 236, 0.2);
+    color: black;
+}
+
+.fa-trash {
+    color: rgb(247, 64, 64);
+}
+
+.fa:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-link {
+        margin-left: 6.2rem;
+    }
+    .form-inline .btn {
+        margin-left: 8rem;
+    }
+    td,
+    th {
+        min-width: 10px;
+    }
+}

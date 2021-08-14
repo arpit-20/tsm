@@ -1,0 +1,73 @@
+.team-heading {
+    color: #2d94f3!important;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.team-heading-desc {
+    font-size: 1.3rem;
+    line-height: 2;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+   
+    margin-top: 10px;
+    color: rgba(13, 38, 76, .7);
+    font-family: sans-serif;
+}
+
+.container {
+    margin-top: 7rem;
+}
+
+.carousel .carousel-cell .card {
+    max-width: 28rem;
+}
+
+.carousel .carousel-cell .card :hover{
+cursor: pointer;
+}
+
+.carousel .carousel-cell .card-header {
+    margin-top: 5rem;
+}
+
+img {
+    width: 110px;
+    height: 110px;
+    margin-left: -3rem;
+    border-radius: 55px;
+}
+
+.col-9 {
+    margin-top: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .team-heading-desc {
+        margin-left: 10px;
+    }
+   .carousel .carousel-cell .card{
+      margin-left: 2.5rem; 
+      
+    }
+   .carousel .carousel-cell {
+        width: 95%;
+        margin-right: 10rem;
+        
+        }
+     .carousel-cell:before {
+          display: block;
+          margin-top: 20px;
+        }
+    
+   
+}
+ .carousel-cell {
+    width: 35%;
+    margin-right: 10rem;
+    
+    }
+ .carousel-cell:before {
+      display: block;
+    }
+   
