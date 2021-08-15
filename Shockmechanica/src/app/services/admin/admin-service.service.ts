@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-
+import * as env from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
   public updateAdmin= new Subject<any>();
 
- private url = "http://localhost:7200/"
+ private url = env.environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   public adminLogin(data: any): Observable<any>{

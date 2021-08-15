@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import * as env from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class CustomerServiceService {
 
   constructor(private http: HttpClient) { }
 
-  private url = "http://localhost:7200/";
+  private url = env.environment.apiUrl;
 
   postCustomerData(data: any): Observable<any>{
     return this.http.post(this.url+"customer/", data);
