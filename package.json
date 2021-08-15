@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "v12.13.1"
+    "node": "v12.13.1",
+    "npm":"6.12.1"
   },
   "dependencies": {
     "cors": "^2.8.5",
