@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.json());
 
-const Port=process.env.PORT || 7200
+const Port=process.env.PORT || 3000
 
 const userRouter=require('./routes/userRoutes');
 
@@ -44,7 +44,7 @@ if(process.env.NODE_ENV == "production"){
         })
 }
 
-app.listen(Port,()=>{
-    console.log('server started.... @ localhost://7200');
+app.listen(process.env.PORT || 3000),()=>{
+    console.log('server started.... @ localhost://3000');
     
 })
