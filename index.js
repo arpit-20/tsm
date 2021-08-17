@@ -20,6 +20,14 @@ app.use('/user',userRouter);
 
 app.use('/customer',customerRouter);
 
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static("Shockmechanica/dist"));
+    const path=require("path");
+        app.get("*",(req,res)=>{
+            res.sendFile(path.resolve('server','Shockmechanica','dist','index.html'));
+        })
+}
+
 mongoose.connect('mongodb+srv://TSM123:uTfXYXKjnYBVPO0x@cluster0.kzcr0.mongodb.net/TSM?retryWrites=true&w=majority',
 {
     useNewUrlParser:true,
@@ -36,13 +44,7 @@ mongoose.set('useCreateIndex', true)
 })
 
 
-if(process.env.NODE_ENV == "production"){
-    app.use(express.static("Shockmechanica/dist"));
-    const path=require("path");
-        app.get("*",(req,res)=>{
-            res.sendFile(path.resolve('server','Shockmechanica','dist','index.html'));
-        })
-}
+
 
 app.listen((process.env.PORT || 3000),()=>{
     console.log('server started.... @ localhost://3000')
