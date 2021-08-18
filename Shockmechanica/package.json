@@ -9,6 +9,13 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "keywords": [
+    "heroku"
+  ],
+  "engines": {
+    "node": "v12.13.1",
+    "npm": "6.12.1"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^11.2.14",
@@ -34,7 +41,7 @@
     "slick-carousel": "^1.8.1",
     "toastr": "^2.1.4",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3"   
+    "zone.js": "~0.11.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.1",

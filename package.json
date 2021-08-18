@@ -8,11 +8,14 @@
     "start": "node index.js",
     "heroku-postbuild": "cd Shockmechanica && npm install && npm run build"
   },
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "engines": {
     "node": "v12.13.1",
-    "npm":"6.12.1"
+    "npm": "6.12.1"
   },
   "dependencies": {
     "cors": "^2.8.5",
