@@ -3,7 +3,13 @@
    
 }
 
-
+img {
+    height: 12rem;
+    width: 12rem !important;
+    /* padding: 0px 10px 30px 10px; */
+    transition: 10s all ease-in-out;
+   
+}
 .client-heading-desc {
     font-size: 1.3rem;
     line-height: 2;

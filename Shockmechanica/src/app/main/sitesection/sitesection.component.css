@@ -28,6 +28,10 @@
     text-shadow: 2px 2px rgba(15, 129, 236, 0.2);
 }
 
+img{
+    border-radius: 15px;
+}
+
 .welcome-heading {
     font-size: 2.6rem;
     text-align: center;
