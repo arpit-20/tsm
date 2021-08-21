@@ -25,6 +25,11 @@
      margin: 0px;
      text-transform:uppercase;
  }  
+
+ .row{
+     background-color: aliceblue;
+ }
+
  .active{
      background-color: white;
  }

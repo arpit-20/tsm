@@ -1,6 +1,8 @@
+
+    
 <nav class="navbar navbar-light sticky-top bg-white navbar-expand-lg">
     <a class="navbar-brand">
-        <img src="../../assets/logo.jpg" width="140px" height="150px" alt="logo">
+        <img src="../../assets/logo.jpg" width="110px" height="80px" alt="logo">
     </a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#mynavbar">
                 <span class = "navbar-toggler-icon"></span>
@@ -12,18 +14,24 @@
             <li class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="services/place">Services</a></li>
             <li class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="blog">Blogs</a></li>
             <li class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="about-us">About us</a></li>
+
             <li *ngIf="isLoggedIn()" class="nav-items"><a class="nav-link" routerLinkActive="active" routerLink="admin-dashboard/orders"><i class="fa fa-user-circle" aria-hidden="true"></i>My Account</a></li>
-            <li class="nav-items">
+
+            <li *ngIf="!isLoggedIn()" class="nav-items"><a class="nav-link" routerLinkActive="active" (click)="redirectToLogin()"  routerLink="login">Login</a></li>
+            <li *ngIf="isLoggedIn()" class="nav-items"><a class="nav-link" routerLinkActive="active" (click)="logout()" routerLink="home">Logout</a></li>
+
+            <!-- <li class="nav-items">
                 <div class="btnStyle" *ngIf="!isLoggedIn()">
                     <button class="btn btn-center" (click)="redirectToLogin()">Login</button>
                 </div>
                 <div class="btnStyle" *ngIf="isLoggedIn()">
                     <button class="btn btn-center" (click)="logout()">Logout</button>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
 </nav>
+
 
 
 <!-- <li class="nav-items dropdown">
@@ -36,3 +44,6 @@
                             <a href="" class="dropdown-item">Link3</a>
                         </div>
                     </li> -->
+
+
+

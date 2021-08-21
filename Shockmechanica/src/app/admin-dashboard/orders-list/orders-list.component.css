@@ -3,55 +3,60 @@ th {
     font-family: 'Roboto', sans-serif;
     font-size: medium;
     text-align: center;
-}
-
-td {
+   }
+    
+   td {
     text-align: center;
-}
-td,
-th {
-    min-width: 142px;
-}
-.login_header {
+   }
+   td,
+   th {
+    min-width: 110px;
+   }
+   .table-bordered thead td, .table-bordered thead th.table-header{
+    min-width: 13rem;
+   }
+   .login_header {
     font-size: 1.3rem;
     line-height: 1.25;
     font-weight: 600;
     color: #0D264C;
-   
+    
     font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
-}
+   }
 
-.nav-link:hover {
+
+
+   .nav-link:hover {
     cursor: pointer;
-}
-
-.form-control {
+   }
+    
+   .form-control {
     width: 75%;
     margin-bottom: 10px;
-}
-
-.form-inline .btn:hover {
+   }
+    
+   .form-inline .btn:hover {
     background-color: rgba(15, 129, 236, 0.2);
     color: black;
-}
-
-.fa-trash {
+   }
+    
+   .fa-trash {
     color: rgb(247, 64, 64);
-}
-
-.fa:hover {
+   }
+    
+   .fa:hover {
     cursor: pointer;
-}
-
-@media only screen and (max-width: 600px) {
+   }
+    
+   @media only screen and (max-width: 600px) {
     .nav-link {
-        margin-left: 6.2rem;
+    margin-left: 6.2rem;
     }
     .form-inline .btn {
-        margin-left: 8rem;
+    margin-left: 8rem;
     }
     td,
     th {
-        min-width: 10px;
+    min-width: 10px;
     }
-}
+   }

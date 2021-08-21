@@ -13,6 +13,7 @@ export class OrdersListComponent implements OnInit {
   customerList: any[] | undefined;
   searchText: string = '';
   searchBuy: string = '';
+  searchOthers:string='';
   data$ = new Subject<any>();
   serviceData: any;
   purchaseData: any;
