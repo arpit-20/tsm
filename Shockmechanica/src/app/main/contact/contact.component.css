@@ -119,6 +119,16 @@ button.from__button--floating,
     border: 0
 }
 
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
+
 button.btn {
     padding: .5rem 1.1rem .4rem;
     line-height: 1.6;

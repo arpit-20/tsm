@@ -45,8 +45,20 @@
                 <div class="form-group mt-4">
                     <textarea type="textarea" id="other_requirement" formControlName="other_requirement" class="form-control form-field" placeholder="Any Requirement?"></textarea>
                 </div>
-                <button class="btn from__button--floating" style="margin-left: 1rem;" type="submit">Submit</button>
-                <button class="btn from__button--floating" style="margin-left: 3rem;" type="cancel" (click)="onReset()">Cancel</button>
+
+                <div id="outer">
+                    <div class="inner"> <button class="btn from__button--floating" style="margin-left: 0rem;" type="submit">Submit</button>
+                    </div>
+                    <div class="inner"> <button class="btn from__button--floating" style="margin-left: 3rem;" type="cancel" (click)="onReset()">Cancel</button>
+                    </div>
+                  </div>
+
+
+                <!-- <div style="display: inline;" class="row">
+                    <button class="btn from__button--floating" style="margin-left: 1rem;" type="submit">Submit</button>
+                    <button class="btn from__button--floating" style="margin-left: 3rem;" type="cancel" (click)="onReset()">Cancel</button>
+          
+                </div> -->
                
                             </form>
                         </div> 
