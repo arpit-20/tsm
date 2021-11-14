@@ -121,23 +121,23 @@ router.post('/', async (req, res) => {
             }
 
 
-            nodeMail.sendMail(this.mailOptions, function (error, Info) {
-                if (error) {
-                    res.status(400).json(error)
-                    console.log(error);
+            // nodeMail.sendMail(this.mailOptions, function (error, Info) {
+            //     if (error) {
+            //         res.status(400).json(error)
+            //         console.log(error);
     
-                } else {
-                    if(Info.response){
+            //     } else {
+            //         if(Info.response){
                         
         res.status(201).json(consumerData);
-                    console.log('email has been sent', Info.response);
-                    }else{
+            //         console.log('email has been sent', Info.response);
+            //         }else{
 
-                    console.log('email has been sent', Info.rejected);
-                    }
+            //         console.log('email has been sent', Info.rejected);
+            //         }
     
-                }
-            })
+            //     }
+            // })
         }).catch(err=>{
 
         res.status(400).send("Error" + err)

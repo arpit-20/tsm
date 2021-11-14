@@ -55,8 +55,8 @@ p{
     font-family: sb-sans, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
 }
 .alert-primary{
-    width: 20%;
-    margin-left: 34rem;
+    width: 50%;
+    margin-left: 4rem;
 }
 .card {
     width: 100%;
