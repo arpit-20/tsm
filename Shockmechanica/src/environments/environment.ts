@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://shockmechanica.herokuapp.com/"
+  apiUrl:"https://tsm-backend2.herokuapp.com/"
 };
 
 /*

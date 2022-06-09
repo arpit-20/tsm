@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
 
-  apiUrl:"https://shockmechanica.herokuapp.com/"
+  apiUrl:"https://tsm-backend2.herokuapp.com/"
 };
