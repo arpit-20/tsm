@@ -1,7 +1,0 @@
-
-{
-    "/api": {
-    "target": "https://tsm-backend2.herokuapp.com",
-    "secure": false
-    }
-    }

@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'developer', component: DeveloperTeamComponent},
   {path: 'services', component: ServiceorderComponent,
 children: [
-  {path: 'place', component: ServiceComponent},
+  {path: 'service', component: ServiceComponent},
 {path: 'buy', component: PurchaseComponent},
 {path: 'others', component: OthersComponent},
 ]},
